@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ff5b87">
+  <meta name="description" content="Projetos de identidade visual e design de Maria Clara.">
+  <title>Portfólio | Maria Clara</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #ff5b87;
+      --ink: #111;
+      --font: 'DM Sans', 'Trebuchet MS', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fff;
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page-header {
+      position: relative;
+      min-height: 38px;
+      display: grid;
+      place-items: center;
+      background-color: var(--pink);
+      background-image: radial-gradient(rgba(255,255,255,.48) .8px, transparent .9px);
+      background-size: 13px 13px;
+    }
+    .page-title {
+      margin: 0;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .back-link {
+      position: absolute;
+      top: 50%;
+      left: max(12px, calc((100% - 486px) / 2));
+      transform: translateY(-50%);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 8px;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 2px;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .back-link:hover, .back-link:focus-visible { background: rgba(255,255,255,.16); }
+    .projects {
+      width: min(486px, calc(100% - 32px));
+      margin: 24px auto 64px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 54px;
+      row-gap: 48px;
+    }
+    .project { min-width: 0; }
+    .project-art {
+      height: 228px;
+      margin: 0 0 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-art a {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-art img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .project h2 {
+      margin: 0 0 10px;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 800;
+    }
+    .project-link {
+      display: inline-block;
+      padding-bottom: 3px;
+      border-bottom: 1px solid var(--pink);
+      color: inherit;
+      font-size: 12px;
+      line-height: 1.2;
+      text-decoration: none;
+    }
+    .project-link:hover, .project-link:focus-visible {
+      color: var(--pink);
+    }
+    a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+    @media (min-width: 521px) {
+      .project:nth-child(3) .project-art,
+      .project:nth-child(4) .project-art { height: 193px; }
+      .project:nth-child(5) { margin-top: -33px; }
+    }
+    @media (max-width: 520px) {
+      .projects {
+        width: min(420px, calc(100% - 32px));
+        column-gap: 24px;
+        row-gap: 34px;
+      }
+      .project-art { height: 190px; margin-bottom: 12px; }
+    }
+    @media (max-width: 360px) {
+      .projects { width: min(260px, calc(100% - 32px)); grid-template-columns: 1fr; row-gap: 30px; }
+      .project-art { height: 230px; }
+    }
+    @media (min-width: 900px) {
+      .page-header { min-height: 54px; }
+      .page-title { font-size: 20px; }
+      .back-link {
+        left: max(32px, calc((100% - 900px) / 2));
+        padding: 7px 10px;
+        font-size: 13px;
+      }
+      .projects {
+        width: min(900px, calc(100% - 80px));
+        margin: 36px auto 80px;
+        column-gap: 80px;
+        row-gap: 58px;
+      }
+      .project-art { height: 380px; margin-bottom: 18px; }
+      .project:nth-child(3) .project-art,
+      .project:nth-child(4) .project-art { height: 300px; }
+      .project h2 { margin-bottom: 12px; font-size: 16px; }
+      .project-link { padding-bottom: 4px; font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="page-header">
+    <a class="back-link" href="index.html"><span aria-hidden="true">←</span><span>Início</span></a>
+    <h1 class="page-title">Portfólio</h1>
+  </header>
+  <main class="projects" aria-label="Projetos de design">
+    <article class="project">
+      <figure class="project-art">
+        <a href="midia/portfolio-maria-lopes.png" target="_blank" rel="noreferrer" aria-label="Abrir projeto Mima's">
+          <img src="midia/portfolio-maria-lopes.png" alt="Identidade visual floral da marca Mima's">
+        </a>
+      </figure>
+      <h2>Mima’s</h2>
+      <a class="project-link" href="midia/portfolio-maria-lopes.png" target="_blank" rel="noreferrer">Ver projeto</a>
+    </article>
+
+    <article class="project">
+      <figure class="project-art">
+        <a href="midia/portfolio-mimas.png" target="_blank" rel="noreferrer" aria-label="Abrir projeto Maria Lopes">
+          <img src="midia/portfolio-mimas.png" alt="Identidade visual da médica veterinária Maria Lopes">
+        </a>
+      </figure>
+      <h2>Maria Lopes</h2>
+      <a class="project-link" href="midia/portfolio-mimas.png" target="_blank" rel="noreferrer">Ver projeto</a>
+    </article>
+
+    <article class="project">
+      <figure class="project-art">
+        <a href="midia/portfolio-pacoca-lopes.png" target="_blank" rel="noreferrer" aria-label="Abrir projeto Paçoca Lopes">
+          <img src="midia/portfolio-pacoca-lopes.png" alt="Embalagens da marca Paçoca Lopes">
+        </a>
+      </figure>
+      <h2>Paçoca Lopes</h2>
+      <a class="project-link" href="midia/portfolio-pacoca-lopes.png" target="_blank" rel="noreferrer">Ver projeto</a>
+    </article>
+
+    <article class="project">
+      <figure class="project-art">
+        <a href="midia/portfolio-yby.png" target="_blank" rel="noreferrer" aria-label="Abrir projeto YBY">
+          <img src="midia/portfolio-yby.png" alt="Embalagens de cosméticos da marca YBY">
+        </a>
+      </figure>
+      <h2>YBY</h2>
+      <a class="project-link" href="midia/portfolio-yby.png" target="_blank" rel="noreferrer">Ver projeto</a>
+    </article>
+
+    <article class="project">
+      <figure class="project-art">
+        <a href="midia/imagem%20design%20ux%20ui.png" target="_blank" rel="noreferrer" aria-label="Abrir projeto Residencial Coruja">
+          <img src="midia/imagem%20design%20ux%20ui.png" alt="Página do site do Residencial Coruja">
+        </a>
+      </figure>
+      <h2>Residencial Coruja Buraqueira</h2>
+      <a class="project-link" href="midia/imagem%20design%20ux%20ui.png" target="_blank" rel="noreferrer">Ver projeto</a>
+    </article>
+  </main>
+</body>
+</html>

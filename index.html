@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Portfólio de Maria Clara, designer gráfica em Brasília.">
+  <title>Maria Clara | Portfólio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #ff739b;
+      --pink-light: #ffdddd;
+      --ink: #111;
+      --line: #e8e8e8;
+      --font: 'DM Sans', 'Trebuchet MS', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fff;
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .site { min-height: 100vh; }
+    .content { width: min(600px, calc(100% - 32px)); margin-inline: auto; }
+    .skip-link { position: absolute; top: 8px; left: -9999px; z-index: 2; padding: 10px; background: #fff; }
+    .skip-link:focus { left: 8px; }
+
+    .header { height: 51px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 12px; }
+    .nav { display: flex; align-items: center; gap: clamp(18px, 5vw, 52px); }
+    .header > .nav:first-child { justify-content: flex-end; }
+    .header > .nav:last-child { justify-content: flex-start; }
+    .nav a { text-decoration: none; text-transform: uppercase; font-size: 8px; font-weight: 800; white-space: nowrap; }
+    .nav a:hover, .nav a:focus-visible { color: var(--pink); }
+    .brand { display: block; width: 58px; }
+    .brand img { display: block; width: 100%; height: auto; }
+
+    .hero {
+      min-height: 197px;
+      width: calc(100% - 32px);
+      margin: 0 auto 24px;
+      padding: 7px 7px 7px 25px;
+      display: grid;
+      grid-template-columns: 1fr 131px;
+      gap: 18px;
+      align-items: start;
+      border: 1px solid var(--pink);
+    }
+    .hero h1 { margin: 18px 0 3px; font-size: 27px; line-height: 1.1; font-weight: 800; letter-spacing: -.055em; }
+    .hero p { max-width: 215px; margin: 0; font-size: 11px; line-height: 1.3; }
+    .media-slot {
+      min-width: 0;
+      display: block;
+      background: #fff;
+      border: 1px solid #e8e5e5;
+      border-radius: 2px;
+      object-fit: cover;
+    }
+    .portrait-slot { width: 100%; height: 182px; border-radius: 15px; }
+
+    .section-title {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+    .section-title img { display: block; width: 100%; height: auto; }
+    .services { padding-top: 0; }
+    .service {
+      min-height: 228px;
+      display: grid;
+      grid-template-columns: 185px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+      padding: 17px 14px 16px;
+    }
+    .service-copy { padding-top: 9px; }
+    .service h3 { margin: 0 0 6px; color: var(--pink); font-size: 18px; line-height: 1.2; font-weight: 700; letter-spacing: -.035em; }
+    .service p { margin: 0; font-size: 8.5px; line-height: 1.35; }
+    .project-slot { width: 100%; height: auto; aspect-ratio: 1.48; object-fit: contain; }
+
+    .experience {
+      min-height: 141px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+      margin-top: 0;
+      padding: 19px 22px;
+      background: var(--pink-light);
+    }
+    .experience h2 { margin: 0; font-size: 22px; line-height: 1.25; font-weight: 500; letter-spacing: -.025em; }
+    .experience-info { padding-top: 3px; }
+    .experience-info strong { display: block; max-width: 145px; font-size: 13px; line-height: 1.25; font-weight: 500; }
+    .experience-info p { margin: 17px 0 0; font-size: 9px; }
+    .experience-info p + p { margin-top: 16px; font-size: 11px; }
+
+    .footer { min-height: 63px; margin-top: 39px; display: flex; align-items: center; background: var(--pink); color: #fff; }
+    .footer-inner { width: min(470px, calc(100% - 28px)); margin-inline: auto; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .contact { display: inline-flex; align-items: center; gap: 6px; font-size: 8px; text-decoration: none; white-space: nowrap; }
+    .contact:hover, .contact:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+    .contact img { width: 17px; height: 17px; flex: 0 0 auto; object-fit: contain; }
+
+    @media (min-width: 700px) {
+      .site { padding-top: 0; }
+    }
+    @media (max-width: 520px) {
+      .content { width: min(100% - 24px, 600px); }
+      .header { height: 48px; gap: 7px; }
+      .nav { gap: clamp(9px, 3.3vw, 18px); }
+      .nav a { font-size: 7px; }
+      .brand { width: 50px; }
+      .hero { width: calc(100% - 16px); min-height: 174px; grid-template-columns: minmax(0, 1fr) minmax(90px, 34%); gap: 10px; padding: 7px 7px 7px 14px; }
+      .hero h1 { margin-top: 17px; font-size: clamp(23px, 7vw, 27px); }
+      .hero p { font-size: 10px; }
+      .portrait-slot { height: 158px; }
+      .service { min-height: 0; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 11px; padding: 20px 7px; }
+      .service-copy { padding-top: 4px; }
+      .service h3 { font-size: clamp(15px, 4.4vw, 18px); }
+      .service p { font-size: 8px; }
+      .project-slot { height: auto; aspect-ratio: 1.48; }
+      .experience { min-height: 130px; padding: 17px 15px; gap: 12px; }
+      .experience h2 { font-size: 19px; }
+      .experience-info strong { font-size: 11px; }
+      .footer { margin-top: 30px; }
+      .footer-inner { gap: 7px; }
+      .contact { gap: 4px; font-size: clamp(6px, 1.8vw, 8px); }
+      .contact img { width: 15px; height: 15px; }
+    }
+    @media (max-width: 350px) {
+      .header { gap: 4px; }
+      .nav { gap: 7px; }
+      .nav a { font-size: 6px; }
+      .service { grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr); gap: 8px; }
+      .service p { font-size: 7.5px; }
+      .experience h2 { font-size: 17px; }
+      .footer-inner { flex-wrap: wrap; justify-content: center; padding-block: 10px; }
+    }
+    @media (min-width: 900px) {
+      .content { width: min(1080px, calc(100% - 80px)); }
+      .header { height: 76px; gap: 20px; }
+      .nav { gap: clamp(28px, 3vw, 48px); }
+      .nav a { font-size: 12px; }
+      .brand { width: 74px; }
+      .hero {
+        width: 100%;
+        min-height: 320px;
+        margin-bottom: 42px;
+        padding: 22px 48px;
+        grid-template-columns: minmax(0, 1fr) 280px;
+        gap: 48px;
+        align-items: center;
+      }
+      .hero h1 { margin: 0 0 12px; font-size: 48px; }
+      .hero p { max-width: 480px; font-size: 18px; line-height: 1.45; }
+      .portrait-slot { height: 276px; border-radius: 20px; }
+      .service {
+        min-height: 320px;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 48px;
+        align-items: center;
+        padding: 32px 40px;
+      }
+      .service-copy { padding-top: 0; }
+      .service h3 { margin-bottom: 12px; font-size: 28px; }
+      .service p { font-size: 15px; line-height: 1.5; }
+      .experience { min-height: 190px; gap: 48px; padding: 32px 40px; }
+      .experience h2 { font-size: 32px; }
+      .experience-info strong { max-width: none; font-size: 19px; }
+      .experience-info p { margin-top: 20px; font-size: 13px; }
+      .experience-info p + p { margin-top: 14px; font-size: 15px; }
+      .footer { min-height: 78px; margin-top: 52px; }
+      .footer-inner { width: min(900px, calc(100% - 80px)); }
+      .contact { gap: 10px; font-size: 12px; }
+      .contact img { width: 20px; height: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="site" id="conteudo">
+    <header class="header content">
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#biografia">Biografia</a>
+        <a href="#portfolio">Fotos</a>
+      </nav>
+      <a class="brand" href="#topo" aria-label="Maria Clara, início"><img src="midia/logo-maria-clara.png" alt="Maria Clara"></a>
+      <nav class="nav" aria-label="Navegação do portfólio">
+        <a href="portfolio.html">Portfólio</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main class="content" id="topo">
+      <section class="hero" id="biografia" aria-labelledby="nome">
+        <div>
+          <h1 id="nome">Maria Clara</h1>
+          <p>Designer gráfica, especialista em identidade visual, que mora em Brasília, Distrito Federal.</p>
+        </div>
+        <img class="media-slot portrait-slot" src="midia/imagem-maria-clara-aprimorada.jpg" alt="Maria Clara sorrindo em um retrato">
+      </section>
+
+      <section id="portfolio" aria-labelledby="services-heading">
+        <h2 class="section-title" id="services-heading"><img src="midia/servicos-disponiveis.png" alt="Serviços disponíveis"></h2>
+        <div class="services">
+          <article class="service">
+            <div class="service-copy">
+              <h3>Identidades Visuais</h3>
+              <p>Uma identidade visual profissional é o que diferencia uma ideia comum de uma marca líder de mercado. Muito mais do que um logotipo bonito, nós criamos um ecossistema visual completo que traduz os valores, a personalidade e a essência do seu negócio em design de alto impacto.</p>
+            </div>
+            <img class="media-slot project-slot" src="midia/imagem%20identidade%20visual.png" alt="Projetos de identidade visual para marcas">
+          </article>
+          <article class="service">
+            <div class="service-copy">
+              <h3>Design UX/UI</h3>
+              <p>O UX/UI Design vai muito além de telas bonitas. Nós unimos comportamento humano, estratégia de negócios e design visual para criar interfaces fluidas, intuitivas e eficientes. O resultado? Usuários satisfeitos e maiores taxas de conversão para a sua empresa.</p>
+            </div>
+            <img class="media-slot project-slot" src="midia/imagem%20design%20ux%20ui.png" alt="Página de um projeto de design UX/UI">
+          </article>
+          <article class="service">
+            <div class="service-copy">
+              <h3>Design de Embalagem</h3>
+              <p>O Design de Embalagem é o primeiro ponto de contato físico entre a sua marca e o consumidor. Muito além de proteger o produto, uma embalagem estratégica atrai o olhar, conta uma história e influencia diretamente a decisão de compra no ponto de venda ou no unboxing do e-commerce.</p>
+            </div>
+            <img class="media-slot project-slot" src="midia/imagem%20design%20de%20embalagem.png" alt="Projeto de embalagem para Paçoca Lopes">
+          </article>
+        </div>
+      </section>
+
+      <section class="experience" aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Experiência<br>Profissional</h2>
+        <div class="experience-info">
+          <strong>Técnico em design gráfico</strong>
+          <p>Senai DF</p>
+          <p>Fev 2024 - Dez 2026</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contato">
+      <div class="footer-inner">
+        <a class="contact" href="mailto:maria.claramotta1@aluno.senai.br" aria-label="Enviar e-mail">
+          <img src="midia/EMAIL.png" alt="" aria-hidden="true">
+          <span>maria.claramotta1@aluno.senai.br</span>
+        </a>
+        <a class="contact" href="https://wa.me/5561985513007" aria-label="WhatsApp">
+          <img src="midia/whatsapp.png" alt="" aria-hidden="true">
+          <span>98551-3007</span>
+        </a>
+        <a class="contact" href="https://instagram.com/lopesmah" aria-label="Instagram @lopesmah">
+          <img src="midia/instagram.png" alt="" aria-hidden="true">
+          <span>@lopesmah</span>
+        </a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
